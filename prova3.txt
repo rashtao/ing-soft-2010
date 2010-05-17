@@ -1,3 +1,0 @@
-prova2.txt
-prova3.txt
-prova.txt
