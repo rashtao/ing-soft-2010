@@ -12,6 +12,16 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Control/CContact.cpp</itemPath>
+      <itemPath>Control/CContact.h</itemPath>
+      <itemPath>Presentation/PContactList.cpp</itemPath>
+      <itemPath>Presentation/PContactList.h</itemPath>
+      <itemPath>Presentation/PGroupList.cpp</itemPath>
+      <itemPath>Presentation/PGroupList.h</itemPath>
+      <itemPath>Presentation/PNewContact.cpp</itemPath>
+      <itemPath>Presentation/PNewContact.h</itemPath>
+      <itemPath>Presentation/PNewGroup.cpp</itemPath>
+      <itemPath>Presentation/PNewGroup.h</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -31,6 +41,10 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibLibItem>fltk</linkerLibLibItem>
+            <linkerLibLibItem>fltk_forms</linkerLibLibItem>
+            <linkerLibLibItem>fltk_gl</linkerLibLibItem>
+            <linkerLibLibItem>fltk_images</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
