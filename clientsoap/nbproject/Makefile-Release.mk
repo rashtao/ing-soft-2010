@@ -15,7 +15,7 @@ RANLIB=ranlib
 CC=gcc
 CCC=g++
 CXX=g++
-FC=
+FC=gfortran
 AS=as
 
 # Macros
@@ -31,6 +31,11 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Presentation/PGroupList.o \
+	${OBJECTDIR}/Presentation/PNewGroup.o \
+	${OBJECTDIR}/Control/CContact.o \
+	${OBJECTDIR}/Presentation/PNewContact.o \
+	${OBJECTDIR}/Presentation/PContactList.o \
 	${OBJECTDIR}/main.o
 
 # C Compiler Flags
@@ -56,6 +61,31 @@ LDLIBSOPTIONS=
 dist/Release/GNU-Linux-x86/clientsoap: ${OBJECTFILES}
 	${MKDIR} -p dist/Release/GNU-Linux-x86
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/clientsoap ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/Presentation/PGroupList.o: nbproject/Makefile-${CND_CONF}.mk Presentation/PGroupList.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Presentation
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Presentation/PGroupList.o Presentation/PGroupList.cpp
+
+${OBJECTDIR}/Presentation/PNewGroup.o: nbproject/Makefile-${CND_CONF}.mk Presentation/PNewGroup.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Presentation
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Presentation/PNewGroup.o Presentation/PNewGroup.cpp
+
+${OBJECTDIR}/Control/CContact.o: nbproject/Makefile-${CND_CONF}.mk Control/CContact.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Control
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Control/CContact.o Control/CContact.cpp
+
+${OBJECTDIR}/Presentation/PNewContact.o: nbproject/Makefile-${CND_CONF}.mk Presentation/PNewContact.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Presentation
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Presentation/PNewContact.o Presentation/PNewContact.cpp
+
+${OBJECTDIR}/Presentation/PContactList.o: nbproject/Makefile-${CND_CONF}.mk Presentation/PContactList.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Presentation
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Presentation/PContactList.o Presentation/PContactList.cpp
 
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
