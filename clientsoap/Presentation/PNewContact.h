@@ -21,14 +21,19 @@
 #include <iostream>
 #include <math.h>
 #include <string>
+#include "../Control/CContact.h"
 
 class PNewContact {
 public:
-    PNewContact();
-    PNewContact(const PNewContact& orig);
+    static PNewContact* getInstance();
     virtual ~PNewContact();
     void show(bool toShow);
+    static void completed_callback(Fl_Widget* e, void *data);
+    void completed();
 private:
+    static PNewContact* instance;
+    PNewContact();
+    PNewContact(const PNewContact& orig);
     Fl_Return_Button *crea;
     Fl_Button *annulla;
     Fl_Window *window;

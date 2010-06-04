@@ -10,20 +10,17 @@
 #include "Presentation/PNewGroup.h"
 #include "Presentation/PContactList.h"
 #include "Presentation/PNewContact.h"
+#include "Presentation/PSearchContact.h"
 
 /*
  * 
  */
 int main(int argc, char** argv) {
 
-    PGroupList p;
-    p.show(true);
 
-    PNewGroup ng;
-    ng.show(true);
+    PContactList* cl=PContactList::getInstance();
+    cl->show(true);
 
-    PContactList cl;
-    PNewContact nc;
 
     return Fl::run();
 }

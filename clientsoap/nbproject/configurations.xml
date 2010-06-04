@@ -22,7 +22,11 @@
       <itemPath>Presentation/PNewContact.h</itemPath>
       <itemPath>Presentation/PNewGroup.cpp</itemPath>
       <itemPath>Presentation/PNewGroup.h</itemPath>
+      <itemPath>Presentation/PSearchContact.cpp</itemPath>
+      <itemPath>Presentation/PSearchContact.h</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>utility.cpp</itemPath>
+      <itemPath>utility.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

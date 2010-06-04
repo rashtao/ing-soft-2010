@@ -20,18 +20,40 @@
 #include <iostream>
 #include <math.h>
 #include <string>
+#include "../utility.h"
+#include "../Control/CContact.h"
+
+using namespace std;
 
 class PContactList {
 public:
-    PContactList();
-    PContactList(const PContactList& orig);
+    static PContactList* getInstance();
     virtual ~PContactList();
     void show(bool toShow);
+    void addNewContact(int ID, string name, string surname, string tel, string mail, string group);
+    void removeContact(int ID);
+    static void newCnt_callback(Fl_Widget* e, void *data);
+    static void delCnt_callback(Fl_Widget* e, void *data);
+    static void selName_callback(Fl_Widget* e, void *data);
+    static void selSurname_callback(Fl_Widget* e, void *data);
+    static void selTel_callback(Fl_Widget* e, void *data);
+    static void selGroup_callback(Fl_Widget* e, void *data);
+    static void selMail_callback(Fl_Widget* e, void *data);
+    static void selID_callback(Fl_Widget* e, void *data);
+    static void search_callback(Fl_Widget* e, void *data);
+    static void addToGroup_callback(Fl_Widget* e, void *data);
+    void delSelected();
+    void change_sel(int n);
+    void clear();
+
 private:
+    PContactList();
+    PContactList(const PContactList& orig);
+    static PContactList *instance;
     Fl_Window *window;
     Fl_Button *newCnt, *delCnt, *addToGrp, *search;
-    Fl_Hold_Browser *nameList, *surnameList, *mailList, *telList, *IDList;
-    Fl_Box *labName, *labSurname, *labMail, *labTel, *labID;
+    Fl_Hold_Browser *nameList, *surnameList, *mailList, *telList, *IDList, *groupList;
+    Fl_Box *labName, *labSurname, *labMail, *labTel, *labID, *labGroup;
 
 };
 
