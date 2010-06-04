@@ -10,16 +10,22 @@
 
 #include <stdlib.h>
 #include <string>
+#include "../Presentation/PNewContact.h"
+#include "../Presentation/PContactList.h"
 
 using namespace std;
 
 class CContact {
 public:
+    static CContact* getInstance();
+    virtual ~CContact();
+    bool addNewContact(string name, string surname, string tel, string mail);
+    bool removeContact(int ID);
+    bool searchContact(string searchFor, string toSearch);
+private:
+    static CContact* instance;
     CContact();
     CContact(const CContact& orig);
-    virtual ~CContact();
-private:
-
 };
 
 #endif	/* _CCONTACT_H */

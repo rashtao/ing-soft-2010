@@ -6,6 +6,7 @@
  */
 
 #include "PNewContact.h"
+PNewContact* PNewContact::instance=NULL;
 
 PNewContact::PNewContact() {
     window=new Fl_Window(600, 500);
@@ -27,6 +28,9 @@ PNewContact::PNewContact() {
     telInput->labelsize(18);
     telInput->textsize(18);
     crea=new Fl_Return_Button(400, 150, 150, 70, "Crea");
+    crea->when(FL_WHEN_RELEASE);
+    int data=0;
+    crea->callback(completed_callback, &data);
     annulla=new Fl_Button(400, 250, 150, 70, "Annulla");
     window->end();
 }
@@ -38,6 +42,12 @@ PNewContact::~PNewContact() {
     window->~Fl_Window();
 }
 
+PNewContact* PNewContact::getInstance(){
+    if (instance==NULL)
+        instance=new PNewContact();
+    return instance;
+}
+
 void PNewContact::show(bool toShow){
     if (toShow)
         window->show();
@@ -45,3 +55,10 @@ void PNewContact::show(bool toShow){
         window->hide();
 }
 
+void PNewContact::completed_callback(Fl_Widget* e, void* data){
+    PNewContact::getInstance()->completed();
+}
+
+void PNewContact::completed(){
+    CContact::getInstance()->addNewContact(nameInput->value(), surnameInput->value(), telInput->value(), mailInput->value());
+}
