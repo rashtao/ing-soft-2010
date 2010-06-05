@@ -1,7 +1,7 @@
 #! /bin/sh
 SOURCEPATH="src"
 CLASSES="build/classes"
-CLASSPATH="lib/mysql-connector-java-5.1.8-bin.jar:lib/orm.jar"
+CLASSPATH="lib/mysql.jar:lib/orm.jar"
 if [ -z "$JAVACCMD" ] ; then
 	if [ -n "$JAVA_HOME"  ] ; then
 		if [ -x "$JAVA_HOME/bin/javac" ] ; then

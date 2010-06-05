@@ -1,7 +1,7 @@
 #! /bin/sh
 
 CLASSES="build/classes"
-CLASSPATH="lib/mysql-connector-java-5.1.8-bin.jar:lib/orm.jar"
+CLASSPATH="lib/mysql.jar:lib/orm.jar"
 ARGS=
 
 for arg in "$@" ; do

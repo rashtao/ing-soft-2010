@@ -20,23 +20,29 @@
 #include <iostream>
 #include <math.h>
 #include <string>
+#include "../Control/CGroup.h"
 
 using namespace std;
 
 class PGroupList {
 public:
-    PGroupList();
-    PGroupList(const PGroupList& orig);
+    static PGroupList* getInstance();
     virtual ~PGroupList();
-    bool deleteGrp(string name);
-    bool deleteGrp(int cod);
-    bool addGroup(string name);
+    void deleteGrp(string name);
+    void deleteSelectedGrp();
+    void addGroup(string name);
     void show(bool toShow);
+    static void newGrp_callback(Fl_Widget* e, void *data);
+    static void deleteGrp_callback(Fl_Widget* e, void *data);
+    static void showGrp_callback(Fl_Widget* e, void *data);
 private:
+    static PGroupList* instance;
     Fl_Button* addGrp, *delGrp, *showGrp;
     Fl_Hold_Browser* grpList;
     Fl_Window* window;
     Fl_Box* labGrp;
+    PGroupList();
+    PGroupList(const PGroupList& orig);
 
 };
 

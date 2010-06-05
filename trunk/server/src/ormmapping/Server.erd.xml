@@ -6,10 +6,10 @@
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>9</Type>
-      <Length>10</Length>
+      <Length>11</Length>
       <Nullable>false</Nullable>
-      <IDGenerator>identity</IDGenerator>
-      <Unique>false</Unique>
+      <IDGenerator>native</IDGenerator>
+      <Unique>true</Unique>
       <Index>false</Index>
       <UserTypes/>
     </Column>
@@ -57,31 +57,28 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="IdGruppo">
+    <Column name="EGruppoIdGruppo">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>EGruppo.IdGruppo</ReferencedColumn>
+      <ReferencedColumn>Entity.EGruppo.IdGruppo</ReferencedColumn>
       <Type>9</Type>
-      <Length>10</Length>
+      <Length>11</Length>
       <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Index name="IdGruppo" unique="false">
-      <Column name="IdGruppo"/>
-    </Index>
   </Entity>
   <Entity name="EGruppo">
     <Column name="IdGruppo">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>9</Type>
-      <Length>10</Length>
+      <Length>11</Length>
       <Nullable>false</Nullable>
-      <IDGenerator>identity</IDGenerator>
-      <Unique>false</Unique>
+      <IDGenerator>native</IDGenerator>
+      <Unique>true</Unique>
       <Index>false</Index>
       <UserTypes/>
     </Column>
@@ -97,13 +94,11 @@
       <UserTypes/>
     </Column>
   </Entity>
-  <ForeignKey name="EContatto_ibfk_1">
+  <ForeignKey name="Contiene2">
     <ReferenceTable>EContatto</ReferenceTable>
     <ReferencedTable>EGruppo</ReferencedTable>
-    <OnUpdate>No action</OnUpdate>
-    <OnDelete>No action</OnDelete>
     <Columns>
-      <Column>IdGruppo</Column>
+      <Column>EGruppoIdGruppo</Column>
     </Columns>
     <RefColumns>
       <Column>IdGruppo</Column>

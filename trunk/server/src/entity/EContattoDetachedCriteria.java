@@ -44,8 +44,8 @@ public class EContattoDetachedCriteria extends AbstractORMDetachedCriteria {
 		email = new StringExpression("email", this.getDetachedCriteria());
 	}
 	
-	public EGruppoDetachedCriteria createIdGruppoCriteria() {
-		return new EGruppoDetachedCriteria(createCriteria("IdGruppo"));
+	public EGruppoDetachedCriteria createEGruppoCriteria() {
+		return new EGruppoDetachedCriteria(createCriteria("eGruppo"));
 	}
 	
 	public EContatto uniqueEContatto(PersistentSession session) {

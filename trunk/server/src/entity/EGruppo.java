@@ -62,9 +62,59 @@ public class EGruppo implements Serializable {
 		}
 	}
 	
+	public boolean deleteAndDissociate() {
+		try {
+			entity.EContatto[] leContattos = eContatto.toArray();
+			for(int i = 0; i < leContattos.length; i++) {
+				leContattos[i].seteGruppo(null);
+			}
+			return delete();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public boolean deleteAndDissociate(org.orm.PersistentSession session) {
+		try {
+			entity.EContatto[] leContattos = eContatto.toArray();
+			for(int i = 0; i < leContattos.length; i++) {
+				leContattos[i].seteGruppo(null);
+			}
+			try {
+				session.delete(this);
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+	
+	private java.util.Set this_getSet (int key) {
+		if (key == entity.ORMConstants.KEY_EGRUPPO_ECONTATTO) {
+			return ORM_eContatto;
+		}
+		
+		return null;
+	}
+	
+	org.orm.util.ORMAdapter _ormAdapter = new org.orm.util.AbstractORMAdapter() {
+		public java.util.Set getSet(int key) {
+			return this_getSet(key);
+		}
+		
+	};
+	
 	private int idGruppo;
 	
 	private String nome;
+	
+	private java.util.Set ORM_eContatto = new java.util.HashSet();
 	
 	private void setIdGruppo(int value) {
 		this.idGruppo = value;
@@ -85,6 +135,16 @@ public class EGruppo implements Serializable {
 	public String getNome() {
 		return nome;
 	}
+	
+	private void setORM_eContatto(java.util.Set value) {
+		this.ORM_eContatto = value;
+	}
+	
+	private java.util.Set getORM_eContatto() {
+		return ORM_eContatto;
+	}
+	
+	public final entity.EContattoSetCollection eContatto = new entity.EContattoSetCollection(this, _ormAdapter, entity.ORMConstants.KEY_EGRUPPO_ECONTATTO, entity.ORMConstants.KEY_ECONTATTO_EGRUPPO, entity.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdGruppo());
