@@ -10,9 +10,11 @@ public class CreateServerData {
 		PersistentTransaction t = entity.ServerPersistentManager.instance().getSession().beginTransaction();
 		try {
 			entity.EContatto entityEContatto = entity.EContattoFactory.createEContatto();
+                        entityEContatto.setNome("pippo");
 			// Initialize the properties of the persistent object here
 			entityEContatto.save();
 			entity.EGruppo entityEGruppo = entity.EGruppoFactory.createEGruppo();
+                        entityEGruppo.setNome("pluto");
 			// Initialize the properties of the persistent object here
 			entityEGruppo.save();
 			t.commit();
