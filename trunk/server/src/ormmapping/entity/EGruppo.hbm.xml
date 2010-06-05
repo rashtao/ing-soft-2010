@@ -11,9 +11,5 @@ License Type: Purchased
 			</generator>
 		</id>
 		<property name="nome" column="Nome" type="string" length="255" not-null="false" lazy="false"/>
-		<set name="ORM_eContatto" lazy="true" cascade="save-update,lock" inverse="true">
-			<key column="EGruppoIdGruppo" not-null="false"/>
-			<one-to-many class="entity.EContatto"/>
-		</set>
 	</class>
 </hibernate-mapping>

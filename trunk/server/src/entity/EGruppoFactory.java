@@ -18,113 +18,103 @@ import org.hibernate.Query;
 import java.util.List;
 
 public class EGruppoFactory {
-	public static EGruppo loadEGruppoByORMID(int idGruppo) {
+	public static EGruppo loadEGruppoByORMID(int idGruppo) throws PersistentException {
 		try {
 			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
 			return loadEGruppoByORMID(session, idGruppo);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo getEGruppoByORMID(int idGruppo) {
+	public static EGruppo getEGruppoByORMID(int idGruppo) throws PersistentException {
 		try {
 			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
 			return getEGruppoByORMID(session, idGruppo);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo loadEGruppoByORMID(int idGruppo, org.hibernate.LockMode lockMode) {
+	public static EGruppo loadEGruppoByORMID(int idGruppo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
 			return loadEGruppoByORMID(session, idGruppo, lockMode);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo getEGruppoByORMID(int idGruppo, org.hibernate.LockMode lockMode) {
+	public static EGruppo getEGruppoByORMID(int idGruppo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
 			return getEGruppoByORMID(session, idGruppo, lockMode);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo loadEGruppoByORMID(PersistentSession session, int idGruppo) {
+	public static EGruppo loadEGruppoByORMID(PersistentSession session, int idGruppo) throws PersistentException {
 		try {
 			return (EGruppo) session.load(entity.EGruppo.class, new Integer(idGruppo));
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo getEGruppoByORMID(PersistentSession session, int idGruppo) {
+	public static EGruppo getEGruppoByORMID(PersistentSession session, int idGruppo) throws PersistentException {
 		try {
 			return (EGruppo) session.get(entity.EGruppo.class, new Integer(idGruppo));
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo loadEGruppoByORMID(PersistentSession session, int idGruppo, org.hibernate.LockMode lockMode) {
+	public static EGruppo loadEGruppoByORMID(PersistentSession session, int idGruppo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (EGruppo) session.load(entity.EGruppo.class, new Integer(idGruppo), lockMode);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo getEGruppoByORMID(PersistentSession session, int idGruppo, org.hibernate.LockMode lockMode) {
+	public static EGruppo getEGruppoByORMID(PersistentSession session, int idGruppo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (EGruppo) session.get(entity.EGruppo.class, new Integer(idGruppo), lockMode);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo[] listEGruppoByQuery(String condition, String orderBy) {
+	public static EGruppo[] listEGruppoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
 			return listEGruppoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo[] listEGruppoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) {
+	public static EGruppo[] listEGruppoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
 			return listEGruppoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo[] listEGruppoByQuery(PersistentSession session, String condition, String orderBy) {
+	public static EGruppo[] listEGruppoByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From entity.EGruppo as EGruppo");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -136,12 +126,11 @@ public class EGruppoFactory {
 			return (EGruppo[]) list.toArray(new EGruppo[list.size()]);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo[] listEGruppoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) {
+	public static EGruppo[] listEGruppoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From entity.EGruppo as EGruppo");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -154,34 +143,31 @@ public class EGruppoFactory {
 			return (EGruppo[]) list.toArray(new EGruppo[list.size()]);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo loadEGruppoByQuery(String condition, String orderBy) {
+	public static EGruppo loadEGruppoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
 			return loadEGruppoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo loadEGruppoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) {
+	public static EGruppo loadEGruppoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
 			return loadEGruppoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static EGruppo loadEGruppoByQuery(PersistentSession session, String condition, String orderBy) {
+	public static EGruppo loadEGruppoByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		EGruppo[] eGruppos = listEGruppoByQuery(session, condition, orderBy);
 		if (eGruppos != null && eGruppos.length > 0)
 			return eGruppos[0];
@@ -189,7 +175,7 @@ public class EGruppoFactory {
 			return null;
 	}
 	
-	public static EGruppo loadEGruppoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) {
+	public static EGruppo loadEGruppoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		EGruppo[] eGruppos = listEGruppoByQuery(session, condition, orderBy, lockMode);
 		if (eGruppos != null && eGruppos.length > 0)
 			return eGruppos[0];
@@ -197,29 +183,27 @@ public class EGruppoFactory {
 			return null;
 	}
 	
-	public static java.util.Iterator iterateEGruppoByQuery(String condition, String orderBy) {
+	public static java.util.Iterator iterateEGruppoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
 			return iterateEGruppoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static java.util.Iterator iterateEGruppoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) {
+	public static java.util.Iterator iterateEGruppoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
 			return iterateEGruppoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static java.util.Iterator iterateEGruppoByQuery(PersistentSession session, String condition, String orderBy) {
+	public static java.util.Iterator iterateEGruppoByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From entity.EGruppo as EGruppo");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -230,12 +214,11 @@ public class EGruppoFactory {
 			return query.iterate();
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public static java.util.Iterator iterateEGruppoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) {
+	public static java.util.Iterator iterateEGruppoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From entity.EGruppo as EGruppo");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -247,8 +230,7 @@ public class EGruppoFactory {
 			return query.iterate();
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	

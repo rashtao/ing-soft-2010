@@ -10,11 +10,11 @@ License Type: Purchased
 			<generator class="native">
 			</generator>
 		</id>
+		<many-to-one name="eGruppo" cascade="lock" column="EGruppoIdGruppo" class="entity.EGruppo" not-null="false" lazy="no-proxy" access="field">
+		</many-to-one>
 		<property name="nome" column="Nome" type="string" length="255" not-null="false" lazy="false"/>
 		<property name="cognome" column="Cognome" type="string" length="255" not-null="false" lazy="false"/>
 		<property name="telefono" column="Telefono" type="string" length="255" not-null="false" lazy="false"/>
 		<property name="email" column="Email" type="string" length="255" not-null="false" lazy="false"/>
-		<many-to-one name="eGruppo" cascade="lock" column="EGruppoIdGruppo" class="entity.EGruppo" not-null="false" lazy="no-proxy" access="field">
-		</many-to-one>
 	</class>
 </hibernate-mapping>

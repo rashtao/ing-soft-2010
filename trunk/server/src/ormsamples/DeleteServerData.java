@@ -9,7 +9,7 @@ public class DeleteServerData {
 	public void deleteTestData() throws PersistentException {
 		PersistentTransaction t = entity.ServerPersistentManager.instance().getSession().beginTransaction();
 		try {
-			entity.EContatto entityEContatto = entity.EContattoFactory.loadEContattoByQuery("Nome= 'pippo'", null);
+			entity.EContatto entityEContatto = entity.EContattoFactory.loadEContattoByQuery(null, null);
 			entityEContatto.delete();
 			entity.EGruppo entityEGruppo = entity.EGruppoFactory.loadEGruppoByQuery(null, null);
 			entityEGruppo.delete();

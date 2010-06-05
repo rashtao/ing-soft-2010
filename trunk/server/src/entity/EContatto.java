@@ -13,102 +13,55 @@
  */
 package entity;
 
+import org.orm.*;
 import java.io.Serializable;
 public class EContatto implements Serializable {
 	public EContatto() {
 	}
 	
-	public boolean save() {
+	public boolean save() throws PersistentException {
 		try {
 			entity.ServerPersistentManager.instance().saveObject(this);
 			return true;
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public boolean delete() {
+	public boolean delete() throws PersistentException {
 		try {
 			entity.ServerPersistentManager.instance().deleteObject(this);
 			return true;
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public boolean refresh() {
+	public boolean refresh() throws PersistentException {
 		try {
 			entity.ServerPersistentManager.instance().getSession().refresh(this);
 			return true;
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
 	
-	public boolean evict() {
+	public boolean evict() throws PersistentException {
 		try {
 			entity.ServerPersistentManager.instance().getSession().evict(this);
 			return true;
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+			throw new PersistentException(e);
 		}
 	}
-	
-	public boolean deleteAndDissociate() {
-		try {
-			if(geteGruppo() != null) {
-				geteGruppo().eContatto.remove(this);
-			}
-			
-			return delete();
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		}
-	}
-	
-	public boolean deleteAndDissociate(org.orm.PersistentSession session) {
-		try {
-			if(geteGruppo() != null) {
-				geteGruppo().eContatto.remove(this);
-			}
-			
-			try {
-				session.delete(this);
-				return true;
-			} catch (Exception e) {
-				return false;
-			}
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		}
-	}
-	
-	private void this_setOwner(Object owner, int key) {
-		if (key == entity.ORMConstants.KEY_ECONTATTO_EGRUPPO) {
-			this.eGruppo = (entity.EGruppo) owner;
-		}
-	}
-	
-	org.orm.util.ORMAdapter _ormAdapter = new org.orm.util.AbstractORMAdapter() {
-		public void setOwner(Object owner, int key) {
-			this_setOwner(owner, key);
-		}
-		
-	};
 	
 	private int idContatto;
+	
+	private entity.EGruppo eGruppo;
 	
 	private String nome;
 	
@@ -117,8 +70,6 @@ public class EContatto implements Serializable {
 	private String telefono;
 	
 	private String email;
-	
-	private entity.EGruppo eGruppo;
 	
 	private void setIdContatto(int value) {
 		this.idContatto = value;
@@ -165,26 +116,10 @@ public class EContatto implements Serializable {
 	}
 	
 	public void seteGruppo(entity.EGruppo value) {
-		if (eGruppo != null) {
-			eGruppo.eContatto.remove(this);
-		}
-		if (value != null) {
-			value.eContatto.add(this);
-		}
-	}
-	
-	public entity.EGruppo geteGruppo() {
-		return eGruppo;
-	}
-	
-	/**
-	 * This method is for internal use only.
-	 */
-	private void setORM_EGruppo(entity.EGruppo value) {
 		this.eGruppo = value;
 	}
 	
-	private entity.EGruppo getORM_EGruppo() {
+	public entity.EGruppo geteGruppo() {
 		return eGruppo;
 	}
 	

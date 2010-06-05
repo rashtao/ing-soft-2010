@@ -9,7 +9,19 @@
       <Length>11</Length>
       <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
-      <Unique>true</Unique>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="EGruppoIdGruppo">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Entity.EGruppo.IdGruppo</ReferencedColumn>
+      <Type>9</Type>
+      <Length>11</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
       <Index>false</Index>
       <UserTypes/>
     </Column>
@@ -57,18 +69,6 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="EGruppoIdGruppo">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Entity.EGruppo.IdGruppo</ReferencedColumn>
-      <Type>9</Type>
-      <Length>11</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
   </Entity>
   <Entity name="EGruppo">
     <Column name="IdGruppo">
@@ -78,7 +78,7 @@
       <Length>11</Length>
       <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
-      <Unique>true</Unique>
+      <Unique>false</Unique>
       <Index>false</Index>
       <UserTypes/>
     </Column>

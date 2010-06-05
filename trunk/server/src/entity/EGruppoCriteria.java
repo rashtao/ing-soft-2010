@@ -36,10 +36,6 @@ public class EGruppoCriteria extends AbstractORMCriteria {
 		this(entity.ServerPersistentManager.instance().getSession());
 	}
 	
-	public entity.EContattoCriteria createEContattoCriteria() {
-		return new entity.EContattoCriteria(createCriteria("ORM_EContatto"));
-	}
-	
 	public EGruppo uniqueEGruppo() {
 		return (EGruppo) super.uniqueResult();
 	}

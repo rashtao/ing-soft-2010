@@ -16,6 +16,4 @@ package entity;
 public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_ECONTATTO_EGRUPPO = 632491856;
 	
-	final int KEY_EGRUPPO_ECONTATTO = -640855152;
-	
 }

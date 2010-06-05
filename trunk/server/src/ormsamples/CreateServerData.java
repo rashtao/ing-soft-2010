@@ -11,6 +11,7 @@ public class CreateServerData {
 		try {
 			entity.EContatto entityEContatto = entity.EContattoFactory.createEContatto();
                         entityEContatto.setNome("pippo");
+                        entityEContatto.setEmail("sdjklfagsl@asda");
 			// Initialize the properties of the persistent object here
 			entityEContatto.save();
 			entity.EGruppo entityEGruppo = entity.EGruppoFactory.createEGruppo();
