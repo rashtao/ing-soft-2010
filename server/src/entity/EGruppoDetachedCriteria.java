@@ -35,6 +35,10 @@ public class EGruppoDetachedCriteria extends AbstractORMDetachedCriteria {
 		nome = new StringExpression("nome", this.getDetachedCriteria());
 	}
 	
+	public entity.EContattoDetachedCriteria createEContattoCriteria() {
+		return new entity.EContattoDetachedCriteria(createCriteria("ORM_EContatto"));
+	}
+	
 	public EGruppo uniqueEGruppo(PersistentSession session) {
 		return (EGruppo) super.createExecutableCriteria(session).uniqueResult();
 	}

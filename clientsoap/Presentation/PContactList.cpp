@@ -7,6 +7,7 @@
 
 #include "PContactList.h"
 #include "PSearchContact.h"
+#include "PGroupList.h"
 #include <math.h>
 
 PContactList* PContactList::instance=NULL;
@@ -50,7 +51,8 @@ void PContactList::search_callback(Fl_Widget* e, void* data){
 }
 
 void PContactList::addToGroup_callback(Fl_Widget* e, void* data){
-    PContactList::getInstance()->clear();
+    PGroupList* gl=PGroupList::getInstance();
+    gl->show(true);
 }
 
 PContactList::PContactList() {

@@ -22,19 +22,24 @@
 #include <math.h>
 #include <string>
 
+#include "PGroupList.h"
+
 class PNewGroup {
 public:
-    PNewGroup();
-    PNewGroup(const PNewGroup& orig);
+    static PNewGroup* getInstance();
     virtual ~PNewGroup();
-    bool createGroup();
+    void createGroup();
     void show(bool toShow);
+    static void addGroup_callback(Fl_Widget* e, void *data);
 private:
+    static PNewGroup* instance;
     Fl_Return_Button *crea;
     Fl_Button *annulla;
     Fl_Window *window;
     Fl_Box *labName;
     Fl_Input *nameInput;
+    PNewGroup();
+    PNewGroup(const PNewGroup& orig);
 
 
 };

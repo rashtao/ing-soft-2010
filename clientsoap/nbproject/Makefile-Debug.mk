@@ -32,11 +32,14 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Presentation/PGroupList.o \
-	${OBJECTDIR}/Presentation/PNewGroup.o \
-	${OBJECTDIR}/Control/CContact.o \
+	${OBJECTDIR}/utility.o \
 	${OBJECTDIR}/Presentation/PNewContact.o \
+	${OBJECTDIR}/Presentation/PSearchContact.o \
+	${OBJECTDIR}/Control/CGroup.o \
 	${OBJECTDIR}/Presentation/PContactList.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/Presentation/PNewGroup.o \
+	${OBJECTDIR}/Control/CContact.o
 
 # C Compiler Flags
 CFLAGS=
@@ -67,20 +70,25 @@ ${OBJECTDIR}/Presentation/PGroupList.o: nbproject/Makefile-${CND_CONF}.mk Presen
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Presentation/PGroupList.o Presentation/PGroupList.cpp
 
-${OBJECTDIR}/Presentation/PNewGroup.o: nbproject/Makefile-${CND_CONF}.mk Presentation/PNewGroup.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Presentation
+${OBJECTDIR}/utility.o: nbproject/Makefile-${CND_CONF}.mk utility.cpp 
+	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Presentation/PNewGroup.o Presentation/PNewGroup.cpp
-
-${OBJECTDIR}/Control/CContact.o: nbproject/Makefile-${CND_CONF}.mk Control/CContact.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Control
-	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Control/CContact.o Control/CContact.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/utility.o utility.cpp
 
 ${OBJECTDIR}/Presentation/PNewContact.o: nbproject/Makefile-${CND_CONF}.mk Presentation/PNewContact.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Presentation
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Presentation/PNewContact.o Presentation/PNewContact.cpp
+
+${OBJECTDIR}/Presentation/PSearchContact.o: nbproject/Makefile-${CND_CONF}.mk Presentation/PSearchContact.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Presentation
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Presentation/PSearchContact.o Presentation/PSearchContact.cpp
+
+${OBJECTDIR}/Control/CGroup.o: nbproject/Makefile-${CND_CONF}.mk Control/CGroup.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Control
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Control/CGroup.o Control/CGroup.cpp
 
 ${OBJECTDIR}/Presentation/PContactList.o: nbproject/Makefile-${CND_CONF}.mk Presentation/PContactList.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Presentation
@@ -91,6 +99,16 @@ ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/Presentation/PNewGroup.o: nbproject/Makefile-${CND_CONF}.mk Presentation/PNewGroup.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Presentation
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Presentation/PNewGroup.o Presentation/PNewGroup.cpp
+
+${OBJECTDIR}/Control/CContact.o: nbproject/Makefile-${CND_CONF}.mk Control/CContact.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Control
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Control/CContact.o Control/CContact.cpp
 
 # Subprojects
 .build-subprojects:

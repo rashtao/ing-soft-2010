@@ -14,6 +14,8 @@
                    projectFiles="true">
       <itemPath>Control/CContact.cpp</itemPath>
       <itemPath>Control/CContact.h</itemPath>
+      <itemPath>Control/CGroup.cpp</itemPath>
+      <itemPath>Control/CGroup.h</itemPath>
       <itemPath>Presentation/PContactList.cpp</itemPath>
       <itemPath>Presentation/PContactList.h</itemPath>
       <itemPath>Presentation/PGroupList.cpp</itemPath>
