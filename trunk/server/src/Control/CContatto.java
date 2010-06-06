@@ -23,18 +23,11 @@ public class CContatto {
 	}
 
 	/**
-	 *
+	 * 
 	 * @param contatto
+	 * @return 
 	 */
-	public boolean creaContatto(EContatto contatto) {
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 *
-	 * @param contatto
-	 */
-	public synchronized boolean modificaContatto(EContatto contatto) {
+	public synchronized boolean salvaContatto(EContatto contatto) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -51,6 +44,23 @@ public class CContatto {
 	 * @param gruppo
 	 */
 	public Collection<EContatto> getByGroup(EGruppo gruppo) {
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public EContatto nuovoContatto() {
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param likeContatto
+	 * @return 
+	 */
+	public Collection<EContatto> cercaContatto(EContatto likeContatto) {
 		throw new UnsupportedOperationException();
 	}
 

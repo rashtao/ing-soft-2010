@@ -1,6 +1,7 @@
 package Control;
 
 import Entity.*;
+import java.util.*;
 
 public class CGruppo {
 
@@ -25,16 +26,9 @@ public class CGruppo {
 	/**
 	 * 
 	 * @param gruppo
+	 * @return 
 	 */
-	public boolean creaGruppo(EGruppo gruppo) {
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param gruppo
-	 */
-	public synchronized boolean modificaGruppo(EGruppo gruppo) {
+	public synchronized boolean salvaGruppo(EGruppo gruppo) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -43,6 +37,23 @@ public class CGruppo {
 	 * @param gruppo
 	 */
 	public synchronized boolean eliminaGruppo(EGruppo gruppo) {
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public EGruppo nuovoGruppo() {
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param likeGruppo
+	 * @return 
+	 */
+	public Collection<EGruppo> cercaGruppo(EGruppo likeGruppo) {
 		throw new UnsupportedOperationException();
 	}
 
