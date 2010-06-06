@@ -20,16 +20,15 @@ public class DeleteServerData {
 		PersistentTransaction t = Entity.ServerPersistentManager.instance().getSession().beginTransaction();
 		try {
 			EContattoCriteria contCrit=new EContattoCriteria(ServerPersistentManager.instance().getSession());
-                        StringExpression ert=new StringExpression("pippo", contCrit);
-                        contCrit.nome.like("pipp%");
+                        contCrit.createEGruppoCriteria().nome.like("pl%");
                         EContatto e[]=contCrit.listEContatto();
                        // entity.EContatto entityEContatto = entity.EContattoFactory.loadEContattoByQuery(null, null);
 		//	entityEContatto.delete();
                         for (int i=0;i<e.length; i++)
                             e[i].delete();
 
-			Entity.EGruppo entityEGruppo = Entity.EGruppoFactory.loadEGruppoByQuery(null, null);
-			entityEGruppo.delete();
+			//Entity.EGruppo entityEGruppo = Entity.EGruppoFactory.loadEGruppoByQuery(null, null);
+			//entityEGruppo.delete();
 			t.commit();
 		}
 		catch (Exception e) {
