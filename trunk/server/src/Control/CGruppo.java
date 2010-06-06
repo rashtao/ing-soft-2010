@@ -4,10 +4,27 @@ import Entity.*;
 
 public class CGruppo {
 
+	private static CGruppo instance;
+
+	private CGruppo() {
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public static CGruppo getInstance() {
+          if (instance == null) {
+              instance = new CGruppo();
+            }
+
+            return instance;
+	}
+
 	/**
 	 * 
 	 * @param gruppo
-	 * @return 
 	 */
 	public boolean creaGruppo(EGruppo gruppo) {
 		throw new UnsupportedOperationException();
@@ -16,7 +33,6 @@ public class CGruppo {
 	/**
 	 * 
 	 * @param gruppo
-	 * @return 
 	 */
 	public synchronized boolean modificaGruppo(EGruppo gruppo) {
 		throw new UnsupportedOperationException();
@@ -25,7 +41,6 @@ public class CGruppo {
 	/**
 	 * 
 	 * @param gruppo
-	 * @return 
 	 */
 	public synchronized boolean eliminaGruppo(EGruppo gruppo) {
 		throw new UnsupportedOperationException();
