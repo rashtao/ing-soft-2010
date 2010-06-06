@@ -11,7 +11,7 @@
  * Licensee: ROOT
  * License Type: Purchased
  */
-package entity;
+package Entity;
 
 import org.orm.*;
 import java.io.Serializable;
@@ -21,7 +21,7 @@ public class EContatto implements Serializable {
 	
 	public boolean save() throws PersistentException {
 		try {
-			entity.ServerPersistentManager.instance().saveObject(this);
+			Entity.ServerPersistentManager.instance().saveObject(this);
 			return true;
 		}
 		catch (Exception e) {
@@ -31,7 +31,7 @@ public class EContatto implements Serializable {
 	
 	public boolean delete() throws PersistentException {
 		try {
-			entity.ServerPersistentManager.instance().deleteObject(this);
+			Entity.ServerPersistentManager.instance().deleteObject(this);
 			return true;
 		}
 		catch (Exception e) {
@@ -41,7 +41,7 @@ public class EContatto implements Serializable {
 	
 	public boolean refresh() throws PersistentException {
 		try {
-			entity.ServerPersistentManager.instance().getSession().refresh(this);
+			Entity.ServerPersistentManager.instance().getSession().refresh(this);
 			return true;
 		}
 		catch (Exception e) {
@@ -51,7 +51,7 @@ public class EContatto implements Serializable {
 	
 	public boolean evict() throws PersistentException {
 		try {
-			entity.ServerPersistentManager.instance().getSession().evict(this);
+			Entity.ServerPersistentManager.instance().getSession().evict(this);
 			return true;
 		}
 		catch (Exception e) {
@@ -61,7 +61,7 @@ public class EContatto implements Serializable {
 	
 	private int idContatto;
 	
-	private entity.EGruppo eGruppo;
+	private Entity.EGruppo eGruppo;
 	
 	private String nome;
 	
@@ -115,11 +115,11 @@ public class EContatto implements Serializable {
 		return email;
 	}
 	
-	public void seteGruppo(entity.EGruppo value) {
+	public void seteGruppo(Entity.EGruppo value) {
 		this.eGruppo = value;
 	}
 	
-	public entity.EGruppo geteGruppo() {
+	public Entity.EGruppo geteGruppo() {
 		return eGruppo;
 	}
 	

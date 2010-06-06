@@ -11,7 +11,7 @@
  * Licensee: ROOT
  * License Type: Purchased
  */
-package entity;
+package Entity;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -39,7 +39,7 @@ public class EContattoCriteria extends AbstractORMCriteria {
 	}
 	
 	public EContattoCriteria() throws PersistentException {
-		this(entity.ServerPersistentManager.instance().getSession());
+		this(Entity.ServerPersistentManager.instance().getSession());
 	}
 	
 	public EGruppoCriteria createEGruppoCriteria() {

@@ -11,7 +11,7 @@
  * Licensee: ROOT
  * License Type: Purchased
  */
-package entity;
+package Entity;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -24,13 +24,13 @@ public class EGruppoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression nome;
 	
 	public EGruppoDetachedCriteria() {
-		super(entity.EGruppo.class, entity.EGruppoCriteria.class);
+		super(Entity.EGruppo.class, Entity.EGruppoCriteria.class);
 		idGruppo = new IntegerExpression("idGruppo", this.getDetachedCriteria());
 		nome = new StringExpression("nome", this.getDetachedCriteria());
 	}
 	
 	public EGruppoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, entity.EGruppoCriteria.class);
+		super(aDetachedCriteria, Entity.EGruppoCriteria.class);
 		idGruppo = new IntegerExpression("idGruppo", this.getDetachedCriteria());
 		nome = new StringExpression("nome", this.getDetachedCriteria());
 	}

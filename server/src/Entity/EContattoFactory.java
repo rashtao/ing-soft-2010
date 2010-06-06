@@ -11,7 +11,7 @@
  * Licensee: ROOT
  * License Type: Purchased
  */
-package entity;
+package Entity;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -20,7 +20,7 @@ import java.util.List;
 public class EContattoFactory {
 	public static EContatto loadEContattoByORMID(int idContatto) throws PersistentException {
 		try {
-			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
+			PersistentSession session = Entity.ServerPersistentManager.instance().getSession();
 			return loadEContattoByORMID(session, idContatto);
 		}
 		catch (Exception e) {
@@ -30,7 +30,7 @@ public class EContattoFactory {
 	
 	public static EContatto getEContattoByORMID(int idContatto) throws PersistentException {
 		try {
-			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
+			PersistentSession session = Entity.ServerPersistentManager.instance().getSession();
 			return getEContattoByORMID(session, idContatto);
 		}
 		catch (Exception e) {
@@ -40,7 +40,7 @@ public class EContattoFactory {
 	
 	public static EContatto loadEContattoByORMID(int idContatto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
+			PersistentSession session = Entity.ServerPersistentManager.instance().getSession();
 			return loadEContattoByORMID(session, idContatto, lockMode);
 		}
 		catch (Exception e) {
@@ -50,7 +50,7 @@ public class EContattoFactory {
 	
 	public static EContatto getEContattoByORMID(int idContatto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
+			PersistentSession session = Entity.ServerPersistentManager.instance().getSession();
 			return getEContattoByORMID(session, idContatto, lockMode);
 		}
 		catch (Exception e) {
@@ -60,7 +60,7 @@ public class EContattoFactory {
 	
 	public static EContatto loadEContattoByORMID(PersistentSession session, int idContatto) throws PersistentException {
 		try {
-			return (EContatto) session.load(entity.EContatto.class, new Integer(idContatto));
+			return (EContatto) session.load(Entity.EContatto.class, new Integer(idContatto));
 		}
 		catch (Exception e) {
 			throw new PersistentException(e);
@@ -69,7 +69,7 @@ public class EContattoFactory {
 	
 	public static EContatto getEContattoByORMID(PersistentSession session, int idContatto) throws PersistentException {
 		try {
-			return (EContatto) session.get(entity.EContatto.class, new Integer(idContatto));
+			return (EContatto) session.get(Entity.EContatto.class, new Integer(idContatto));
 		}
 		catch (Exception e) {
 			throw new PersistentException(e);
@@ -78,7 +78,7 @@ public class EContattoFactory {
 	
 	public static EContatto loadEContattoByORMID(PersistentSession session, int idContatto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (EContatto) session.load(entity.EContatto.class, new Integer(idContatto), lockMode);
+			return (EContatto) session.load(Entity.EContatto.class, new Integer(idContatto), lockMode);
 		}
 		catch (Exception e) {
 			throw new PersistentException(e);
@@ -87,7 +87,7 @@ public class EContattoFactory {
 	
 	public static EContatto getEContattoByORMID(PersistentSession session, int idContatto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (EContatto) session.get(entity.EContatto.class, new Integer(idContatto), lockMode);
+			return (EContatto) session.get(Entity.EContatto.class, new Integer(idContatto), lockMode);
 		}
 		catch (Exception e) {
 			throw new PersistentException(e);
@@ -96,7 +96,7 @@ public class EContattoFactory {
 	
 	public static EContatto[] listEContattoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
+			PersistentSession session = Entity.ServerPersistentManager.instance().getSession();
 			return listEContattoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -106,7 +106,7 @@ public class EContattoFactory {
 	
 	public static EContatto[] listEContattoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
+			PersistentSession session = Entity.ServerPersistentManager.instance().getSession();
 			return listEContattoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -149,7 +149,7 @@ public class EContattoFactory {
 	
 	public static EContatto loadEContattoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
+			PersistentSession session = Entity.ServerPersistentManager.instance().getSession();
 			return loadEContattoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -159,7 +159,7 @@ public class EContattoFactory {
 	
 	public static EContatto loadEContattoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
+			PersistentSession session = Entity.ServerPersistentManager.instance().getSession();
 			return loadEContattoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -185,7 +185,7 @@ public class EContattoFactory {
 	
 	public static java.util.Iterator iterateEContattoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
+			PersistentSession session = Entity.ServerPersistentManager.instance().getSession();
 			return iterateEContattoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -195,7 +195,7 @@ public class EContattoFactory {
 	
 	public static java.util.Iterator iterateEContattoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = entity.ServerPersistentManager.instance().getSession();
+			PersistentSession session = Entity.ServerPersistentManager.instance().getSession();
 			return iterateEContattoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -235,7 +235,7 @@ public class EContattoFactory {
 	}
 	
 	public static EContatto createEContatto() {
-		return new entity.EContatto();
+		return new Entity.EContatto();
 	}
 	
 	public static EContatto loadEContattoByCriteria(EContattoCriteria eContattoCriteria) {

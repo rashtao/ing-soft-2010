@@ -11,7 +11,7 @@
  * Licensee: ROOT
  * License Type: Purchased
  */
-package entity;
+package Entity;
 
 public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_ECONTATTO_EGRUPPO = 632491856;

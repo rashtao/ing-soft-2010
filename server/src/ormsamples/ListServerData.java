@@ -10,7 +10,7 @@ public class ListServerData {
 	
 	public void listTestData() throws PersistentException {
 		System.out.println("Listing EContatto...");
-		entity.EContatto[] entityEContattos = entity.EContattoFactory.listEContattoByQuery(null, null);
+		Entity.EContatto[] entityEContattos = Entity.EContattoFactory.listEContattoByQuery(null, null);
 		int length = Math.min(entityEContattos.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(entityEContattos[i]);
@@ -18,7 +18,7 @@ public class ListServerData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing EGruppo...");
-		entity.EGruppo[] entityEGruppos = entity.EGruppoFactory.listEGruppoByQuery(null, null);
+		Entity.EGruppo[] entityEGruppos = Entity.EGruppoFactory.listEGruppoByQuery(null, null);
 		length = Math.min(entityEGruppos.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(entityEGruppos[i]);
@@ -29,11 +29,11 @@ public class ListServerData {
 	
 	public void listByCriteria() throws PersistentException  {
 		System.out.println("Listing EContatto by Criteria...");
-		entity.EContattoCriteria eContattoCriteria = new entity.EContattoCriteria();
+		Entity.EContattoCriteria eContattoCriteria = new Entity.EContattoCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
 		//eContattoCriteria.idContatto.eq();
 		eContattoCriteria.setMaxResults(ROW_COUNT);
-		entity.EContatto[] entityEContattos = eContattoCriteria.listEContatto();
+		Entity.EContatto[] entityEContattos = eContattoCriteria.listEContatto();
 		int length =entityEContattos== null ? 0 : Math.min(entityEContattos.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
 			 System.out.println(entityEContattos[i]);
@@ -41,11 +41,11 @@ public class ListServerData {
 		System.out.println(length + " EContatto record(s) retrieved."); 
 		
 		System.out.println("Listing EGruppo by Criteria...");
-		entity.EGruppoCriteria eGruppoCriteria = new entity.EGruppoCriteria();
+		Entity.EGruppoCriteria eGruppoCriteria = new Entity.EGruppoCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
 		//eGruppoCriteria.idGruppo.eq();
 		eGruppoCriteria.setMaxResults(ROW_COUNT);
-		entity.EGruppo[] entityEGruppos = eGruppoCriteria.listEGruppo();
+		Entity.EGruppo[] entityEGruppos = eGruppoCriteria.listEGruppo();
 		length =entityEGruppos== null ? 0 : Math.min(entityEGruppos.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
 			 System.out.println(entityEGruppos[i]);
@@ -62,7 +62,7 @@ public class ListServerData {
 				//listServerData.listByCriteria();
 			}
 			finally {
-				entity.ServerPersistentManager.instance().disposePersistentManager();
+				Entity.ServerPersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {

@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!--
 Licensee: ROOT
 License Type: Purchased
 -->
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="entity.EContatto" table="EContatto" lazy="false">
-		<id name="idContatto" column="IdContatto" type="integer" unsaved-value="0">
-			<generator class="native">
+  <class lazy="false" name="Entity.EContatto" table="EContatto">
+    <id column="IdContatto" name="idContatto" type="integer" unsaved-value="0">
+      <generator class="native">
 			</generator>
-		</id>
-		<many-to-one name="eGruppo" cascade="lock" column="EGruppoIdGruppo" class="entity.EGruppo" not-null="false" lazy="no-proxy" access="field">
+    </id>
+    <many-to-one access="field" cascade="lock" class="Entity.EGruppo" column="EGruppoIdGruppo" lazy="no-proxy" name="eGruppo" not-null="false">
 		</many-to-one>
-		<property name="nome" column="Nome" type="string" length="255" not-null="false" lazy="false"/>
-		<property name="cognome" column="Cognome" type="string" length="255" not-null="false" lazy="false"/>
-		<property name="telefono" column="Telefono" type="string" length="255" not-null="false" lazy="false"/>
-		<property name="email" column="Email" type="string" length="255" not-null="false" lazy="false"/>
-	</class>
+    <property column="Nome" lazy="false" length="255" name="nome" not-null="false" type="string"/>
+    <property column="Cognome" lazy="false" length="255" name="cognome" not-null="false" type="string"/>
+    <property column="Telefono" lazy="false" length="255" name="telefono" not-null="false" type="string"/>
+    <property column="Email" lazy="false" length="255" name="email" not-null="false" type="string"/>
+  </class>
 </hibernate-mapping>

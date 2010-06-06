@@ -11,7 +11,7 @@
  * Licensee: ROOT
  * License Type: Purchased
  */
-package entity;
+package Entity;
 
 import org.orm.*;
 import org.orm.cfg.JDBCConnectionSetting;
