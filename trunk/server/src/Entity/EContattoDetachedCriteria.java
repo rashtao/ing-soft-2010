@@ -11,7 +11,7 @@
  * Licensee: ROOT
  * License Type: Purchased
  */
-package entity;
+package Entity;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -27,7 +27,7 @@ public class EContattoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression email;
 	
 	public EContattoDetachedCriteria() {
-		super(entity.EContatto.class, entity.EContattoCriteria.class);
+		super(Entity.EContatto.class, Entity.EContattoCriteria.class);
 		idContatto = new IntegerExpression("idContatto", this.getDetachedCriteria());
 		nome = new StringExpression("nome", this.getDetachedCriteria());
 		cognome = new StringExpression("cognome", this.getDetachedCriteria());
@@ -36,7 +36,7 @@ public class EContattoDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public EContattoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, entity.EContattoCriteria.class);
+		super(aDetachedCriteria, Entity.EContattoCriteria.class);
 		idContatto = new IntegerExpression("idContatto", this.getDetachedCriteria());
 		nome = new StringExpression("nome", this.getDetachedCriteria());
 		cognome = new StringExpression("cognome", this.getDetachedCriteria());

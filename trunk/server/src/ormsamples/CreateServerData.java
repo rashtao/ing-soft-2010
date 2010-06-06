@@ -7,14 +7,14 @@ package ormsamples;
 import org.orm.*;
 public class CreateServerData {
 	public void createTestData() throws PersistentException {
-		PersistentTransaction t = entity.ServerPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = Entity.ServerPersistentManager.instance().getSession().beginTransaction();
 		try {
-			entity.EContatto entityEContatto = entity.EContattoFactory.createEContatto();
+			Entity.EContatto entityEContatto = Entity.EContattoFactory.createEContatto();
                         entityEContatto.setNome("pippo");
                         entityEContatto.setEmail("sdjklfagsl@asda");
 			// Initialize the properties of the persistent object here
 			entityEContatto.save();
-			entity.EGruppo entityEGruppo = entity.EGruppoFactory.createEGruppo();
+			Entity.EGruppo entityEGruppo = Entity.EGruppoFactory.createEGruppo();
                         entityEGruppo.setNome("pluto");
 			// Initialize the properties of the persistent object here
 			entityEGruppo.save();
@@ -33,7 +33,7 @@ public class CreateServerData {
 				createServerData.createTestData();
 			}
 			finally {
-				entity.ServerPersistentManager.instance().disposePersistentManager();
+				Entity.ServerPersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {

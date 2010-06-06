@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!--
 Licensee: ROOT
 License Type: Purchased
 -->
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="entity.EGruppo" table="EGruppo" lazy="false">
-		<id name="idGruppo" column="IdGruppo" type="integer" unsaved-value="0">
-			<generator class="native">
+  <class lazy="false" name="Entity.EGruppo" table="EGruppo">
+    <id column="IdGruppo" name="idGruppo" type="integer" unsaved-value="0">
+      <generator class="native">
 			</generator>
-		</id>
-		<property name="nome" column="Nome" type="string" length="255" not-null="false" lazy="false"/>
-	</class>
+    </id>
+    <property column="Nome" lazy="false" length="255" name="nome" not-null="false" type="string"/>
+  </class>
 </hibernate-mapping>

@@ -4,9 +4,9 @@
  */
 package ormsamples;
 
-import entity.EContatto;
-import entity.EContattoCriteria;
-import entity.ServerPersistentManager;
+import Entity.EContatto;
+import Entity.EContattoCriteria;
+import Entity.ServerPersistentManager;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.criterion.CriteriaQuery;
@@ -17,7 +17,7 @@ import org.orm.*;
 import org.orm.criteria.StringExpression;
 public class DeleteServerData {
 	public void deleteTestData() throws PersistentException {
-		PersistentTransaction t = entity.ServerPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = Entity.ServerPersistentManager.instance().getSession().beginTransaction();
 		try {
 			EContattoCriteria contCrit=new EContattoCriteria(ServerPersistentManager.instance().getSession());
                         StringExpression ert=new StringExpression("pippo", contCrit);
@@ -28,7 +28,7 @@ public class DeleteServerData {
                         for (int i=0;i<e.length; i++)
                             e[i].delete();
 
-			entity.EGruppo entityEGruppo = entity.EGruppoFactory.loadEGruppoByQuery(null, null);
+			Entity.EGruppo entityEGruppo = Entity.EGruppoFactory.loadEGruppoByQuery(null, null);
 			entityEGruppo.delete();
 			t.commit();
 		}
@@ -45,7 +45,7 @@ public class DeleteServerData {
 				deleteServerData.deleteTestData();
 			}
 			finally {
-				entity.ServerPersistentManager.instance().disposePersistentManager();
+				Entity.ServerPersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {
